@@ -30,5 +30,25 @@ namespace SimpleWeightManager
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// The event when the item1 of the menu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void Items1_Click( object sender, System.Windows.RoutedEventArgs e )
+        {
+
+        }
+
+        /// <summary>
+        /// The event when the item2 of the menu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void Items2_Click( object sender, System.Windows.RoutedEventArgs e )
+        {
+
+        }
     }
 }
