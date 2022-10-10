@@ -1,0 +1,14 @@
+﻿<Window x:Class="SimpleWeightManager.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:SimpleWeightManager"
+    mc:Ignorable="d"
+    x:Name="mainWindow"
+    Title="SimpleWeightManager" Height="640" Width="950"
+    Closing="MainWindow_Closing">
+    <ScrollViewer HorizontalScrollBarVisibility="auto" VerticalScrollBarVisibility="auto">
+
+    </ScrollViewer>
+</Window>
