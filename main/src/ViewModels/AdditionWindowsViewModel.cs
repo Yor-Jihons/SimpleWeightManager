@@ -29,11 +29,14 @@ namespace SimpleWeightManager
             }
 
             private DateTime targetDate;
-            public DateTime TargetDate{
-                get{
+            public DateTime TargetDate
+            {
+                get
+                {
                     return targetDate;
                 }
-                set{
+                set
+                {
                     this.targetDate = value;
                     // 通知する
                     this.NotifyPropertyChanged( "TargetDate" );
