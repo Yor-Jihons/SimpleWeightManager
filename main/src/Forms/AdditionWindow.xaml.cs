@@ -27,9 +27,9 @@ namespace SimpleWeightManager
         {
             InitializeComponent();
 
-            //this.m_viewModel = viewModel;
+            this.m_viewModel = viewModel;
 
-            //this.DataContext = m_viewModel;
+            this.DataContext = m_viewModel;
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace SimpleWeightManager
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void TextBoxPrice_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        private void TextBoxPrice_PreviewTextInput( object sender, TextCompositionEventArgs e )
         {
             // 0-9のみ
             e.Handled = !new System.Text.RegularExpressions.Regex( "[0-9.]" ).IsMatch( e.Text );
@@ -48,10 +48,10 @@ namespace SimpleWeightManager
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void TextBoxPrice_PreviewExecuted(object sender, ExecutedRoutedEventArgs e)
+        private void TextBoxPrice_PreviewExecuted( object sender, ExecutedRoutedEventArgs e )
         {
-          // 貼り付けを許可しない
-            if (e.Command == ApplicationCommands.Paste)
+            // 貼り付けを許可しない
+            if( e.Command == ApplicationCommands.Paste )
             {
                 e.Handled = true;
             }
@@ -62,6 +62,6 @@ namespace SimpleWeightManager
             this.DialogResult = true;
         }
 
-        //private ViewModels.AdditionWindowViewModel m_viewModel;
+        private ViewModels.AdditionWindowViewModel m_viewModel;
     }
 }
