@@ -7,7 +7,6 @@ git remote add origin https://github.com/Yor-Jihons/SimpleWeightManager.git
 git push -u origin main
 
 git add .
-git commit -m "ミスの修正"
+git commit -m "タプルにしていた部分を分離"
 git branch -M main
-git remote add origin https://github.com/Yor-Jihons/SimpleWeightManager.git
 git push -u origin main

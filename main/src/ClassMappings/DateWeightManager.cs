@@ -52,17 +52,20 @@ namespace SimpleWeightManager
                 }
             }
 
-            public void FetchWeights( out DateWeight newWeight, out DateWeight prevWeight )
+            public DateWeight FetchLatestWeight()
             {
+                DateWeight newWeight = null;
                 if( this.infos.DateWeights.Count >= 1 )
                     newWeight  = this.infos.DateWeights[ this.infos.DateWeights.Count - 1 ];
-                else
-                    newWeight  = null;
+            return newWeight;
+            }
 
+            public DateWeight FetchPrevWeight()
+            {
+                DateWeight prevWeight = null;
                 if( this.infos.DateWeights.Count >= 2 )
                     prevWeight  = this.infos.DateWeights[ this.infos.DateWeights.Count - 2 ];
-                else
-                    prevWeight  = null;
+            return prevWeight;
             }
 
             public bool IsEmpty()

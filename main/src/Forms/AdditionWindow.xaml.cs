@@ -25,7 +25,7 @@ namespace SimpleWeightManager
         /// </summary>
         public AdditionWindow( ViewModels.AdditionWindowViewModel viewModel )
         {
-            //InitializeComponent();
+            InitializeComponent();
 
             this.m_viewModel = viewModel;
 

@@ -68,8 +68,7 @@ namespace SimpleWeightManager
             var additionWindowViewModel = new ViewModels.AdditionWindowViewModel();
             var additionWindow = new AdditionWindow( additionWindowViewModel );
 
-            ClassMappings.DateWeight newWeight, prevWeight;
-            dateWeightManager.FetchWeights( out newWeight, out prevWeight );
+            var newWeight = this.dateWeightManager.FetchLatestWeight();
             if( newWeight != null )
             {
                 additionWindowViewModel.Height     = newWeight.Height;
@@ -176,8 +175,7 @@ namespace SimpleWeightManager
             prevBMITextBox.Text        = "---";
             prevBestWeightTextBox.Text = "0.0kg";
 
-            ClassMappings.DateWeight newWeight = null, prevWeight = null;
-            this.dateWeightManager.FetchWeights( out newWeight, out prevWeight );
+            var newWeight = this.dateWeightManager.FetchLatestWeight();
             if( newWeight != null )
             {
                 latestDateTextBox.Text       = newWeight.ToDateString( ClassMappings.DateWeightDateType.ForDataCard );
@@ -187,6 +185,7 @@ namespace SimpleWeightManager
                 latestBestWeightTextBox.Text = ClassMappings.DateWeight.CalcBestWeight( newWeight );
             }
 
+            var prevWeight = this.dateWeightManager.FetchPrevWeight();
             if( prevWeight != null )
             {
                 prevDateTextBox.Text       = prevWeight.ToDateString( ClassMappings.DateWeightDateType.ForDataCard );
