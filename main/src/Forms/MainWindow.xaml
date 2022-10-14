@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:SimpleWeightManager"
     mc:Ignorable="d"
     x:Name="mainWindow"
-    Title="SimpleWeightManager 1.1.0" Height="640" Width="950"
+    Title="SimpleWeightManager" Height="640" Width="950"
     Closing="MainWindow_Closing">
     <ScrollViewer HorizontalScrollBarVisibility="auto" VerticalScrollBarVisibility="auto">
         <Grid>
