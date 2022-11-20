@@ -40,7 +40,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <GroupBox Grid.Row="0" Grid.Column="0">
+                <GroupBox Grid.Row="0" Grid.Column="0" Name="dataCard1">
                     <GroupBox.Header>
                         <StackPanel>
                             <Label Content="最近のデータ" />
@@ -70,7 +70,7 @@
                         <TextBox x:Name="latestBestWeightTextBox" Grid.Row="4" Grid.Column="1" IsReadOnly="True" BorderThickness="0" />
                     </Grid>
                 </GroupBox>
-                <GroupBox Grid.Row="0" Grid.Column="1">
+                <GroupBox Grid.Row="0" Grid.Column="1" Name="dataCard2">
                     <GroupBox.Header>
                         <StackPanel>
                             <Label Content="前回のデータ" />

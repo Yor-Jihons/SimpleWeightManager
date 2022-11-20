@@ -4,7 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <AssemblyName>SimpleWeightManager</AssemblyName>
-    <ApplicationIcon>.\res\Icons\app_icon.ico</ApplicationIcon>
+    <ApplicationIcon>.\res\Icons\appicon.ico</ApplicationIcon>
     <UseWPF>true</UseWPF>
     <DebugType Condition="'$(Configuration)' != 'Debug'">none</DebugType>
     <Version>1.0.0</Version>
