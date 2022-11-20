@@ -47,7 +47,7 @@ namespace SimpleWeightManager
                 {
                     xs[i]     = i;
                     ys[i]     = DateWeightManager.ConvertWeightString2Int( d.Weight );
-                    xticks[i] = d.ToDateString( ClassMappings.DateWeightDateType.ForGraph );
+                    xticks[i] = d.ToDateString( ClassMappings.DateWeightDateType.ForGraph, "" );
                     i++;
                 }
             }

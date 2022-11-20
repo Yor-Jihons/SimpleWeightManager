@@ -109,21 +109,25 @@ namespace SimpleWeightManager
 
             this.ReflectGraph();
 
-            latestDateTextBox.Text = "---";
-            latestHeightTextBox.Text = "---";
-            latestWeightTextBox.Text = "---";
-            latestBMITextBox.Text = "---";
-            latestBestWeightTextBox.Text = "---";
+            string defaultStr = "";
 
-            prevDateTextBox.Text = "---";
-            prevHeightTextBox.Text = "---";
-            prevWeightTextBox.Text = "---";
-            prevBMITextBox.Text = "---";
-            prevBestWeightTextBox.Text = "---";
+            latestDateTextBox.Text = defaultStr;
+            latestHeightTextBox.Text = defaultStr;
+            latestWeightTextBox.Text = defaultStr;
+            latestBMITextBox.Text = defaultStr;
+            latestBestWeightTextBox.Text = defaultStr;
+            lastestBodyFatPercentageTextBox.Text = defaultStr;
 
-            aimTextBox.Text = "---";
-            mesTextBox.Text = "---";
-            notesTextBox.Text = "---";
+            prevDateTextBox.Text = defaultStr;
+            prevHeightTextBox.Text = defaultStr;
+            prevWeightTextBox.Text = defaultStr;
+            prevBMITextBox.Text = defaultStr;
+            prevBestWeightTextBox.Text = defaultStr;
+            prevBodyFatPercentageTextBox.Text = defaultStr;
+
+            aimTextBox.Text = defaultStr;
+            mesTextBox.Text = defaultStr;
+            notesTextBox.Text = defaultStr;
 
             item2.IsEnabled = false;
         }
@@ -163,36 +167,43 @@ namespace SimpleWeightManager
             {
                 return;
             }
-            latestDateTextBox.Text       = "---";
-            latestHeightTextBox.Text     = "0.0cm";
-            latestWeightTextBox.Text     = "0.0kg";
-            latestBMITextBox.Text        = "---";
-            latestBestWeightTextBox.Text = "0.0kg";
 
-            prevDateTextBox.Text       = "---";
-            prevHeightTextBox.Text     = "0.0cm";
-            prevWeightTextBox.Text     = "0.0kg";
-            prevBMITextBox.Text        = "---";
-            prevBestWeightTextBox.Text = "0.0kg";
+            string defaultStr = "---";
+
+            latestDateTextBox.Text               = defaultStr;
+            latestHeightTextBox.Text             = defaultStr;
+            latestWeightTextBox.Text             = defaultStr;
+            latestBMITextBox.Text                = defaultStr;
+            latestBestWeightTextBox.Text         = defaultStr;
+            lastestBodyFatPercentageTextBox.Text = defaultStr;
+
+            prevDateTextBox.Text              = defaultStr;
+            prevHeightTextBox.Text            = defaultStr;
+            prevWeightTextBox.Text            = defaultStr;
+            prevBMITextBox.Text               = defaultStr;
+            prevBestWeightTextBox.Text        = defaultStr;
+            prevBodyFatPercentageTextBox.Text = defaultStr;
 
             var newWeight = this.dateWeightManager.FetchLatestWeight();
             if( newWeight != null )
             {
-                latestDateTextBox.Text       = newWeight.ToDateString( ClassMappings.DateWeightDateType.ForDataCard );
-                latestHeightTextBox.Text     = newWeight.ToHeightString();
-                latestWeightTextBox.Text     = newWeight.ToWeightString();
-                latestBMITextBox.Text        = ClassMappings.DateWeight.CalcBMI( newWeight );
-                latestBestWeightTextBox.Text = ClassMappings.DateWeight.CalcBestWeight( newWeight );
+                latestDateTextBox.Text               = newWeight.ToDateString( ClassMappings.DateWeightDateType.ForDataCard, defaultStr );
+                latestHeightTextBox.Text             = newWeight.ToHeightString( defaultStr );
+                latestWeightTextBox.Text             = newWeight.ToWeightString( defaultStr );
+                latestBMITextBox.Text                = ClassMappings.DateWeight.CalcBMI( newWeight, defaultStr );
+                latestBestWeightTextBox.Text         = ClassMappings.DateWeight.CalcBestWeight( newWeight, defaultStr );
+                lastestBodyFatPercentageTextBox.Text = defaultStr; // TODO:
             }
 
             var prevWeight = this.dateWeightManager.FetchPrevWeight();
             if( prevWeight != null )
             {
-                prevDateTextBox.Text       = prevWeight.ToDateString( ClassMappings.DateWeightDateType.ForDataCard );
-                prevHeightTextBox.Text     = prevWeight.ToHeightString();
-                prevWeightTextBox.Text     = prevWeight.ToWeightString();
-                prevBMITextBox.Text        = ClassMappings.DateWeight.CalcBMI( prevWeight );
-                prevBestWeightTextBox.Text = ClassMappings.DateWeight.CalcBestWeight( prevWeight );
+                prevDateTextBox.Text              = prevWeight.ToDateString( ClassMappings.DateWeightDateType.ForDataCard, defaultStr );
+                prevHeightTextBox.Text            = prevWeight.ToHeightString( defaultStr );
+                prevWeightTextBox.Text            = prevWeight.ToWeightString( defaultStr );
+                prevBMITextBox.Text               = ClassMappings.DateWeight.CalcBMI( prevWeight, defaultStr );
+                prevBestWeightTextBox.Text        = ClassMappings.DateWeight.CalcBestWeight( prevWeight, defaultStr );
+                prevBodyFatPercentageTextBox.Text = defaultStr; // TODO:
             }
         }
 
