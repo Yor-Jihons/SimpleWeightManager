@@ -78,6 +78,11 @@ namespace SimpleWeightManager
                 DateWeightInfo.Save( this.infos, this.filepath );
             }
 
+            public bool Has( DateWeight dateWeight )
+            {
+                return false;
+            }
+
             public void Add( DateWeight dateWeight )
             {
                 this.infos.DateWeights.Add( dateWeight );

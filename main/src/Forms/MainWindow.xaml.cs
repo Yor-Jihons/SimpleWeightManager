@@ -80,6 +80,7 @@ namespace SimpleWeightManager
                 item2.IsEnabled = true;
 
                 // TODO: すでに追加されているならキャンセル
+                
 
                 dateWeightManager.Add(
                     ClassMappings.DateWeight.Create(
