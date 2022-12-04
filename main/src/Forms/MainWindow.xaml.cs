@@ -59,7 +59,7 @@ namespace SimpleWeightManager
         }
 
         /// <summary>
-        /// The event when the item1 of the menu.
+        /// The event when the item1 of the menu. (To add weights.)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -95,7 +95,7 @@ namespace SimpleWeightManager
         }
 
         /// <summary>
-        /// The event when the item2 of the menu.
+        /// The event when the item2 of the menu. (To delete all weights.)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
