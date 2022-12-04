@@ -1,11 +1,47 @@
 ﻿<Application x:Class="SimpleWeightManager.App"
-            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-            xmlns:local="clr-namespace:SimpleWeightManager"
-            StartupUri=".\src\Forms\MainWindow.xaml"
-            Startup="ApplicationStartup"
-            Exit="Application_Exit">
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:SimpleWeightManager"
+        StartupUri=".\src\Forms\MainWindow.xaml"
+        Startup="ApplicationStartup"
+        Exit="Application_Exit">
     <Application.Resources>
-         
+        <Style x:Key="GroupBox4DataCard" TargetType="GroupBox">
+            <Setter Property="FontFamily" Value="Century Gothic, メイリオ, Meiryo UI" />
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="FontStretch" Value="UltraExpanded" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+        <Style x:Key="LabelFont4DataCard" TargetType="Label">
+            <Setter Property="FontFamily" Value="Century Gothic, メイリオ, Meiryo UI" />
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="FontStretch" Value="UltraExpanded" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+        <Style x:Key="TextBoxFont4DataCard" TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Century Gothic, メイリオ, Meiryo UI" />
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="FontStretch" Value="UltraExpanded" />
+            <Setter Property="FontSize" Value="17" />
+            <Setter Property="FontStyle" Value="Italic" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+        <Style x:Key="TextBoxFont4Message" TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Century Gothic, メイリオ, Meiryo UI" />
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="FontStretch" Value="UltraExpanded" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontStyle" Value="Italic" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+
+        <Style x:Key="TextBoxFont4Note" TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Century Gothic, メイリオ, Meiryo UI" />
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="FontStretch" Value="UltraExpanded" />
+            <Setter Property="FontSize" Value="17" />
+        </Style>
     </Application.Resources>
 </Application>

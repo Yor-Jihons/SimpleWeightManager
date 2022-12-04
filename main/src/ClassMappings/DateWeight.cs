@@ -44,8 +44,9 @@ namespace SimpleWeightManager
             /// To calculate the BMI.
             /// </summary>
             /// <param name="dateWeight">The object of this class.</param>
+            /// <param name="defaultStr">The string data for the default value.</param>
             /// <returns>The string as a BMI text.</returns>
-            public static string CalcBMI( ClassMappings.DateWeight dateWeight )
+            public static string CalcBMI( ClassMappings.DateWeight dateWeight, string defaultStr )
             {
                 if( dateWeight == null ) return "";
 
@@ -54,6 +55,7 @@ namespace SimpleWeightManager
                 double weight = Double.Parse( dateWeight.Weight );
                 double height = Double.Parse( dateWeight.Height ) / (double)100.0;
                 double bmi = weight / (height * height);
+                if( bmi.ToString().Equals( "NaN" ) ) return defaultStr;
             return bmi.ToString( "F2" );
             }
 
@@ -61,13 +63,15 @@ namespace SimpleWeightManager
             /// To Calculate the best weight.
             /// </summary>
             /// <param name="dateWeight">An object of this class.</param>
+            /// <param name="defaultStr">The string data for the default value.</param>
             /// <returns></returns>
-            public static string CalcBestWeight( ClassMappings.DateWeight dateWeight )
+            public static string CalcBestWeight( ClassMappings.DateWeight dateWeight, string defaultStr )
             {
                 // 計算式: 適正体重(kg) = 身長(m) × 身長(m) × 22
                 // 日本医師会HPより
                 double height = Double.Parse( dateWeight.Height ) / (double)100.0;
                 double bestWeight = height * height * 22;
+                if( bestWeight.Equals( 0.0 ) ) return defaultStr;
                 var builder = new StringBuilder();
                 builder.Append( bestWeight.ToString( "F2" ) );
                 builder.Append( "kg" );
@@ -84,7 +88,7 @@ namespace SimpleWeightManager
 
             public override string ToString()
             {
-                var text = this.ToDateString( DateWeightDateType.ForDataCard ) + "\n" + this.ToHeightString() + "\n" + this.ToWeightString();
+                var text = this.ToDateString( DateWeightDateType.ForDataCard, "---" ) + "\n" + this.ToHeightString( "---" ) + "\n" + this.ToWeightString( "---" );
             return text;
             }
 
@@ -92,9 +96,11 @@ namespace SimpleWeightManager
             /// To make the date string.
             /// </summary>
             /// <param name="type">The data of the enum DateWeightDateType.</param>
+            /// <param name="defaultStr">The string data for the default value.</param>
             /// <returns>The date string.</returns>
-            public string ToDateString( ClassMappings.DateWeightDateType type )
+            public string ToDateString( ClassMappings.DateWeightDateType type, string defaultStr )
             {
+                // TODO: 日付がない場合はreturn defaultStr;
                 var d = new System.DateTime( this.Year, this.Month, this.Day );
                 string format = (type == DateWeightDateType.ForGraph ? "M/d" : "yyyy/M/d dddd");
             return d.ToString( format );
@@ -121,18 +127,25 @@ namespace SimpleWeightManager
             return d;
             }
 
-            public string ToHeightString()
+            public string ToHeightString( string defaultStr )
             {
                 const string UNIT = "cm";
-                if( this.Height.Equals( string.Empty ) ) return ("0.0" + UNIT);
+                if( this.Height.Equals( string.Empty ) || this.Height.Equals( "0.0" ) || this.Height.Equals( "0.00" ) ) return defaultStr;
             return (this.Height + UNIT);
             }
 
-            public string ToWeightString()
+            public string ToWeightString( string defaultStr )
             {
                 const string UNIT = "kg";
-                if( this.Weight.Equals( string.Empty ) ) return ("0.0" + UNIT);
+                if( this.Weight.Equals( string.Empty ) || this.Weight.Equals( "0.0" ) || this.Weight.Equals( "0.00" ) ) return defaultStr;
             return (this.Weight + UNIT);
+            }
+
+            public string ToBodyFatPercentageString( string defaultStr )
+            {
+                const string UNIT = "%";
+                if( this.BodyFatPercentage.Equals( string.Empty ) || this.BodyFatPercentage.Equals( "0" ) ) return defaultStr;
+            return (this.BodyFatPercentage + UNIT);
             }
 
             public string DifferenceFromGoal()
@@ -180,6 +193,9 @@ namespace SimpleWeightManager
 
             [System.Xml.Serialization.XmlElement("weight2aim")]
             public string Weight2Aim{ get; set; } = "0.0";
+
+            [System.Xml.Serialization.XmlElement("bodyfatpercentage")]
+            public string BodyFatPercentage{ get; set; } = "0";
         }
     }
 }

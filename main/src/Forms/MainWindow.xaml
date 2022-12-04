@@ -32,7 +32,7 @@
 
             <WpfPlot Name="wpfPlot1" Grid.Row="1" Grid.Column="0" Height="350" />
 
-            <Grid Grid.Row="2" Grid.Column="0" Height="155">
+            <Grid Grid.Row="2" Grid.Column="0" Height="197">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*"/>
@@ -40,7 +40,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <GroupBox Grid.Row="0" Grid.Column="0">
+                <GroupBox Grid.Row="0" Grid.Column="0" Name="dataCard1" Style="{StaticResource GroupBox4DataCard}">
                     <GroupBox.Header>
                         <StackPanel>
                             <Label Content="最近のデータ" />
@@ -57,20 +57,23 @@
                             <RowDefinition Height="*" />
                             <RowDefinition Height="*" />
                             <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <Label Content="日付:" Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" />
-                        <TextBox x:Name="latestDateTextBox" Grid.Row="0" Grid.Column="1" IsReadOnly="True" BorderThickness="0" />
-                        <Label Content="身長:" Grid.Row="1" Grid.Column="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" />
-                        <TextBox x:Name="latestHeightTextBox" Grid.Row="1" Grid.Column="1" IsReadOnly="True" BorderThickness="0" />
-                        <Label Content="体重:" Grid.Row="2" Grid.Column="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" />
-                        <TextBox x:Name="latestWeightTextBox" Grid.Row="2" Grid.Column="1" IsReadOnly="True" BorderThickness="0" />
-                        <Label Content="BMI:" Grid.Row="3" Grid.Column="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" />
-                        <TextBox x:Name="latestBMITextBox" Grid.Row="3" Grid.Column="1" IsReadOnly="True" BorderThickness="0" />
-                        <Label Content="適正体重:" Grid.Row="4" Grid.Column="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" />
-                        <TextBox x:Name="latestBestWeightTextBox" Grid.Row="4" Grid.Column="1" IsReadOnly="True" BorderThickness="0" />
+                        <Label Content="日付:" Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelFont4DataCard}" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" />
+                        <TextBox x:Name="latestDateTextBox" Grid.Row="0" Grid.Column="1" Style="{StaticResource TextBoxFont4DataCard}" IsReadOnly="True" BorderThickness="0" />
+                        <Label Content="身長:" Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelFont4DataCard}" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" />
+                        <TextBox x:Name="latestHeightTextBox" Grid.Row="1" Grid.Column="1" Style="{StaticResource TextBoxFont4DataCard}" IsReadOnly="True" BorderThickness="0" />
+                        <Label Content="体重:" Grid.Row="2" Grid.Column="0" Style="{StaticResource LabelFont4DataCard}" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" />
+                        <TextBox x:Name="latestWeightTextBox" Grid.Row="2" Grid.Column="1" Style="{StaticResource TextBoxFont4DataCard}" IsReadOnly="True" BorderThickness="0" />
+                        <Label Content="BMI:" Grid.Row="3" Grid.Column="0" Style="{StaticResource LabelFont4DataCard}" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" />
+                        <TextBox x:Name="latestBMITextBox" Grid.Row="3" Grid.Column="1" Style="{StaticResource TextBoxFont4DataCard}" IsReadOnly="True" BorderThickness="0" />
+                        <Label Content="適正体重:" Grid.Row="4" Grid.Column="0" Style="{StaticResource LabelFont4DataCard}" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" />
+                        <TextBox x:Name="latestBestWeightTextBox" Grid.Row="4" Grid.Column="1" Style="{StaticResource TextBoxFont4DataCard}" IsReadOnly="True" BorderThickness="0" />
+                        <Label Content="体脂肪率:" Grid.Row="5" Grid.Column="0" Style="{StaticResource LabelFont4DataCard}" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" />
+                        <TextBox x:Name="lastestBodyFatPercentageTextBox" Grid.Row="5" Grid.Column="1" Style="{StaticResource TextBoxFont4DataCard}" IsReadOnly="True" BorderThickness="0" />
                     </Grid>
                 </GroupBox>
-                <GroupBox Grid.Row="0" Grid.Column="1">
+                <GroupBox Grid.Row="0" Grid.Column="1" Name="dataCard2" Style="{StaticResource GroupBox4DataCard}">
                     <GroupBox.Header>
                         <StackPanel>
                             <Label Content="前回のデータ" />
@@ -87,23 +90,26 @@
                             <RowDefinition Height="*" />
                             <RowDefinition Height="*" />
                             <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <Label Content="日付:" Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" />
-                        <TextBox x:Name="prevDateTextBox" Grid.Row="0" Grid.Column="1" IsReadOnly="True" BorderThickness="0" />
-                        <Label Content="身長:" Grid.Row="1" Grid.Column="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" />
-                        <TextBox x:Name="prevHeightTextBox" Grid.Row="1" Grid.Column="1" IsReadOnly="True" BorderThickness="0" />
-                        <Label Content="体重:" Grid.Row="2" Grid.Column="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" />
-                        <TextBox x:Name="prevWeightTextBox" Grid.Row="2" Grid.Column="1" IsReadOnly="True" BorderThickness="0" />
-                        <Label Content="BMI:" Grid.Row="3" Grid.Column="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" />
-                        <TextBox x:Name="prevBMITextBox" Grid.Row="3" Grid.Column="1" IsReadOnly="True" BorderThickness="0" />
-                        <Label Content="適正体重:" Grid.Row="4" Grid.Column="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" />
-                        <TextBox x:Name="prevBestWeightTextBox" Grid.Row="4" Grid.Column="1" IsReadOnly="True" BorderThickness="0" />
+                        <Label Content="日付:" Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelFont4DataCard}" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" />
+                        <TextBox x:Name="prevDateTextBox" Grid.Row="0" Grid.Column="1" Style="{StaticResource TextBoxFont4DataCard}" IsReadOnly="True" BorderThickness="0" />
+                        <Label Content="身長:" Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelFont4DataCard}" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" />
+                        <TextBox x:Name="prevHeightTextBox" Grid.Row="1" Grid.Column="1" Style="{StaticResource TextBoxFont4DataCard}" IsReadOnly="True" BorderThickness="0" />
+                        <Label Content="体重:" Grid.Row="2" Grid.Column="0" Style="{StaticResource LabelFont4DataCard}" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" />
+                        <TextBox x:Name="prevWeightTextBox" Grid.Row="2" Grid.Column="1" Style="{StaticResource TextBoxFont4DataCard}" IsReadOnly="True" BorderThickness="0" />
+                        <Label Content="BMI:" Grid.Row="3" Grid.Column="0" Style="{StaticResource LabelFont4DataCard}" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" />
+                        <TextBox x:Name="prevBMITextBox" Grid.Row="3" Grid.Column="1" Style="{StaticResource TextBoxFont4DataCard}" IsReadOnly="True" BorderThickness="0" />
+                        <Label Content="適正体重:" Grid.Row="4" Grid.Column="0" Style="{StaticResource LabelFont4DataCard}" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" />
+                        <TextBox x:Name="prevBestWeightTextBox" Grid.Row="4" Grid.Column="1" Style="{StaticResource TextBoxFont4DataCard}" IsReadOnly="True" BorderThickness="0" />
+                        <Label Content="体脂肪率:" Grid.Row="5" Grid.Column="0" Style="{StaticResource LabelFont4DataCard}" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" />
+                        <TextBox x:Name="prevBodyFatPercentageTextBox" Grid.Row="5" Grid.Column="1" Style="{StaticResource TextBoxFont4DataCard}" IsReadOnly="True" BorderThickness="0" />
                     </Grid>
                 </GroupBox>
             </Grid>
-            <TextBox x:Name="aimTextBox" Grid.Row="3" Grid.Column="0" FontSize="20" IsReadOnly="True" BorderThickness="0" Height="70" />
-            <TextBox x:Name="mesTextBox" Grid.Row="4" Grid.Column="0" FontSize="20" IsReadOnly="True" BorderThickness="0" Height="70" />
-            <TextBox x:Name="notesTextBox" Grid.Row="5" Grid.Column="0" Margin="0 0 0 10" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Height="150" />
+            <TextBox x:Name="aimTextBox" Grid.Row="3" Grid.Column="0" Style="{StaticResource TextBoxFont4Message}" IsReadOnly="True" BorderThickness="0" Height="70" />
+            <TextBox x:Name="mesTextBox" Grid.Row="4" Grid.Column="0" Style="{StaticResource TextBoxFont4Message}" IsReadOnly="True" BorderThickness="0" Height="70" />
+            <TextBox x:Name="notesTextBox" Grid.Row="5" Grid.Column="0" Style="{StaticResource TextBoxFont4Note}" Margin="10,0,10,10" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Height="150" />
         </Grid>
     </ScrollViewer>
 </Window>

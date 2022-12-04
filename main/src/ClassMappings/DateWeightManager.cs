@@ -47,7 +47,7 @@ namespace SimpleWeightManager
                 {
                     xs[i]     = i;
                     ys[i]     = DateWeightManager.ConvertWeightString2Int( d.Weight );
-                    xticks[i] = d.ToDateString( ClassMappings.DateWeightDateType.ForGraph );
+                    xticks[i] = d.ToDateString( ClassMappings.DateWeightDateType.ForGraph, "" );
                     i++;
                 }
             }
@@ -78,10 +78,16 @@ namespace SimpleWeightManager
                 DateWeightInfo.Save( this.infos, this.filepath );
             }
 
+            public bool Has( DateWeight dateWeight )
+            {
+                var comparer = new DateWeightComparer();
+            return (this.infos.DateWeights.BinarySearch( dateWeight, comparer ) >= 0 ? true : false);
+            }
+
             public void Add( DateWeight dateWeight )
             {
                 this.infos.DateWeights.Add( dateWeight );
-                this.infos.DateWeights.Sort( (a, b) => b.CompareTo(a) );
+                this.infos.DateWeights.Sort( (a, b) => a.CompareTo(b) );
             }
 
             public void Clear()
