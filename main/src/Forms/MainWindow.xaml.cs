@@ -192,7 +192,7 @@ namespace SimpleWeightManager
                 latestWeightTextBox.Text             = newWeight.ToWeightString( defaultStr );
                 latestBMITextBox.Text                = ClassMappings.DateWeight.CalcBMI( newWeight, defaultStr );
                 latestBestWeightTextBox.Text         = ClassMappings.DateWeight.CalcBestWeight( newWeight, defaultStr );
-                lastestBodyFatPercentageTextBox.Text = defaultStr; // TODO:
+                lastestBodyFatPercentageTextBox.Text = newWeight.ToBodyFatPercentageString( defaultStr );
             }
 
             var prevWeight = this.dateWeightManager.FetchPrevWeight();
@@ -203,7 +203,7 @@ namespace SimpleWeightManager
                 prevWeightTextBox.Text            = prevWeight.ToWeightString( defaultStr );
                 prevBMITextBox.Text               = ClassMappings.DateWeight.CalcBMI( prevWeight, defaultStr );
                 prevBestWeightTextBox.Text        = ClassMappings.DateWeight.CalcBestWeight( prevWeight, defaultStr );
-                prevBodyFatPercentageTextBox.Text = defaultStr; // TODO:
+                prevBodyFatPercentageTextBox.Text = prevWeight.ToBodyFatPercentageString( defaultStr );
             }
         }
 
