@@ -81,7 +81,7 @@ namespace SimpleWeightManager
             public void Add( DateWeight dateWeight )
             {
                 this.infos.DateWeights.Add( dateWeight );
-                this.infos.DateWeights.Sort( (a, b) => b.CompareTo(a) );
+                this.infos.DateWeights.Sort( (a, b) => a.CompareTo(b) );
             }
 
             public void Clear()

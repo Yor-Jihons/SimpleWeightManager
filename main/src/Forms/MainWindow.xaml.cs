@@ -78,6 +78,9 @@ namespace SimpleWeightManager
             if( additionWindow.ShowDialog() == true )
             {
                 item2.IsEnabled = true;
+
+                // TODO: すでに追加されているならキャンセル
+
                 dateWeightManager.Add(
                     ClassMappings.DateWeight.Create(
                         additionWindowViewModel.TargetDate,
