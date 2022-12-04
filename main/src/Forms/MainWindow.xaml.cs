@@ -79,17 +79,20 @@ namespace SimpleWeightManager
             {
                 item2.IsEnabled = true;
 
-                // TODO: すでに追加されているならキャンセル
-                
-
-                dateWeightManager.Add(
-                    ClassMappings.DateWeight.Create(
-                        additionWindowViewModel.TargetDate,
-                        additionWindowViewModel.Height,
-                        additionWindowViewModel.Weight,
-                        additionWindowViewModel.Weight2Aim
-                    )
+                var newest = ClassMappings.DateWeight.Create(
+                    additionWindowViewModel.TargetDate,
+                    additionWindowViewModel.Height,
+                    additionWindowViewModel.Weight,
+                    additionWindowViewModel.Weight2Aim
                 );
+
+                if( dateWeightManager.Has( newest ) )
+                {
+                    System.Windows.MessageBox.Show( "すでにあるため記録しませんでした。" );
+                    return;
+                }
+
+                dateWeightManager.Add( newest );
                 this.dateWeightManager.Save();
                 this.ReflectGraph();
                 this.ReflectDataCards();

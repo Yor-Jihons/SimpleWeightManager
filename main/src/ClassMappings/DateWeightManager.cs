@@ -80,7 +80,8 @@ namespace SimpleWeightManager
 
             public bool Has( DateWeight dateWeight )
             {
-                return false;
+                var comparer = new DateWeightComparer();
+            return (this.infos.DateWeights.BinarySearch( dateWeight, comparer ) >= 0 ? true : false);
             }
 
             public void Add( DateWeight dateWeight )
