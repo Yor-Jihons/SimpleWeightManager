@@ -139,6 +139,9 @@ namespace SimpleWeightManager
             item2.IsEnabled = false;
         }
 
+        /// <summary>
+        /// To reflect the data to the graph.
+        /// </summary>
         private void ReflectGraph()
         {
             wpfPlot1.Plot.XTicks( new string[]{} );
@@ -161,6 +164,9 @@ namespace SimpleWeightManager
             wpfPlot1.Refresh();
         }
 
+        /// <summary>
+        /// To reflect the the message to some textboxes.
+        /// </summary>
         public void ReflectMessage()
         {
             aimTextBox.Text = dateWeightManager.ToAimString();
