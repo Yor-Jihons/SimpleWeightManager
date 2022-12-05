@@ -71,6 +71,20 @@ namespace SimpleWeightManager
                 }
             }
 
+            private string bodyFatPercentage;
+            public string BodyFatPercentage
+            {
+                get
+                {
+                    return this.bodyFatPercentage;
+                }
+                set
+                {
+                    this.bodyFatPercentage = value;
+                    this.NotifyPropertyChanged( "BodyFatPercentage" );
+                }
+            }
+
             private string weight2aim;
             public string Weight2Aim
             {

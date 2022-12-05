@@ -14,17 +14,19 @@ namespace SimpleWeightManager
             /// <param name="date">An object of the class DateTime.</param>
             /// <param name="height">The height data.</param>
             /// <param name="weight">The weight data.</param>
+            /// <param name="bodyFatPercentage">The body fat percentage.</param>
             /// <param name="weight2aim">The weight the user aims.</param>
             /// <returns>An object of this class.</returns>
-            public static DateWeight Create( System.DateTime date, string height, string weight, string weight2aim )
+            public static DateWeight Create( System.DateTime date, string height, string weight, string bodyFatPercentage, string weight2aim )
             {
                 var res = new DateWeight();
-                res.Year       = date.Year;
-                res.Month      = date.Month;
-                res.Day        = date.Day;
-                res.Height     = height;
-                res.Weight     = weight;
-                res.Weight2Aim = weight2aim;
+                res.Year              = date.Year;
+                res.Month             = date.Month;
+                res.Day               = date.Day;
+                res.Height            = height;
+                res.Weight            = weight;
+                res.BodyFatPercentage = bodyFatPercentage;
+                res.Weight2Aim        = weight2aim;
             return res;
             }
 
