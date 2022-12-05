@@ -75,6 +75,7 @@ namespace SimpleWeightManager
                 additionWindowViewModel.Weight2Aim = newWeight.Weight2Aim;
             }
             additionWindowViewModel.Notes = notesTextBox.Text;
+            additionWindowViewModel.BodyFatPercentage = "0";
             if( additionWindow.ShowDialog() == true )
             {
                 item2.IsEnabled = true;
@@ -83,6 +84,7 @@ namespace SimpleWeightManager
                     additionWindowViewModel.TargetDate,
                     additionWindowViewModel.Height,
                     additionWindowViewModel.Weight,
+                    additionWindowViewModel.BodyFatPercentage,
                     additionWindowViewModel.Weight2Aim
                 );
 
