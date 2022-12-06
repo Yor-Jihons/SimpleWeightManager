@@ -154,15 +154,11 @@ namespace SimpleWeightManager
 
             if( !dateWeightManager.IsEmpty() )
             {
-                int N = dateWeightManager.Count();
-                double[] plotX  = new double[N];
-                double[] plotY  = new double[N];
-                string[] xticks = new string[N];
-                dateWeightManager.Fetch( plotX, plotY, xticks );
+                var graphElement = dateWeightManager.Fetch();
 
-                wpfPlot1.Plot.XTicks( xticks );
+                wpfPlot1.Plot.XTicks( graphElement.Xticks );
                 wpfPlot1.Plot.Title( "体重の変動" );
-                wpfPlot1.Plot.AddSignalXY( plotX, plotY );
+                wpfPlot1.Plot.AddSignalXY( graphElement.Xs, graphElement.Ys );
                 wpfPlot1.Plot.XAxis.TickLabelStyle( rotation: 45 );
                 wpfPlot1.Plot.Render();
             }

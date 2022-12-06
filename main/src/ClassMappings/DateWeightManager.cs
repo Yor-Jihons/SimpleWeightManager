@@ -38,9 +38,17 @@ namespace SimpleWeightManager
                 }
             }
 
-            public void Fetch( double[] xs, double[] ys, string[] xticks )
+            // GraphElements
+
+            public GraphElements.GraphElement Fetch()
             {
-                if( this.infos.DateWeights.Count <= 0 ) return;
+                if( this.infos.DateWeights.Count <= 0 ) return null;
+
+                int n = this.infos.DateWeights.Count;
+
+                var xs     = new double[n];
+                var ys     = new double[n];
+                var xticks = new string[n];
 
                 int i = 0;
                 foreach( var d in this.infos.DateWeights )
@@ -50,6 +58,7 @@ namespace SimpleWeightManager
                     xticks[i] = d.ToDateString( ClassMappings.DateWeightDateType.ForGraph, "" );
                     i++;
                 }
+            return new GraphElements.GraphElement( xs, ys, xticks );
             }
 
             public DateWeight FetchLatestWeight()
