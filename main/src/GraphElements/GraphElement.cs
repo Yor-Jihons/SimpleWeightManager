@@ -4,15 +4,17 @@ namespace SimpleWeightManager
     {
         public class GraphElement
         {
-            public GraphElement( double[] xs, double[] ys, string[] xticks )
+            public GraphElement( double[] bodyFatPercentages, double[] weights, double[] ticks, string[] xticks )
             {
-                this.Xs     = xs;
-                this.Ys     = ys;
-                this.Xticks = xticks;
+                this.BodyFatPercentages  = bodyFatPercentages;
+                this.Weights             = weights;
+                this.Ticks               = ticks;
+                this.Xticks              = xticks;
             }
 
-            public double[] Xs{ get; private set; }
-            public double[] Ys{ get; private set; }
+            public double[] BodyFatPercentages{ get; private set; }
+            public double[] Weights{ get; private set; }
+            public double[] Ticks{ get; private set; }
             public string[] Xticks{ get; private set; }
         }
     }
