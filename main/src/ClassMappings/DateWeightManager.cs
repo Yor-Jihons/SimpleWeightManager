@@ -38,18 +38,27 @@ namespace SimpleWeightManager
                 }
             }
 
-            public void Fetch( double[] xs, double[] ys, string[] xticks )
+            public GraphElements.GraphElement Fetch()
             {
-                if( this.infos.DateWeights.Count <= 0 ) return;
+                if( this.infos.DateWeights.Count <= 0 ) return null;
+
+                int n = this.infos.DateWeights.Count;
+
+                var weights            = new double[n];
+                var bodyFatPercentages = new double[n];
+                var ticks              = new double[n];
+                var xticks             = new string[n];
 
                 int i = 0;
                 foreach( var d in this.infos.DateWeights )
                 {
-                    xs[i]     = i;
-                    ys[i]     = DateWeightManager.ConvertWeightString2Int( d.Weight );
-                    xticks[i] = d.ToDateString( ClassMappings.DateWeightDateType.ForGraph, "" );
+                    bodyFatPercentages[i] = DateWeightManager.ConvertBodyFatPercentageString2Int( d.BodyFatPercentage );
+                    weights[i]            = DateWeightManager.ConvertWeightString2Int( d.Weight );
+                    ticks[i]              = i;
+                    xticks[i]             = d.ToDateString( ClassMappings.DateWeightDateType.ForGraph, "" );
                     i++;
                 }
+            return new GraphElements.GraphElement( bodyFatPercentages, weights, ticks, xticks );
             }
 
             public DateWeight FetchLatestWeight()
@@ -123,6 +132,13 @@ namespace SimpleWeightManager
 
             private static double ConvertWeightString2Int( string weight )
             {
+                // TODO: チェックして処理
+                return Double.Parse( weight );
+            }
+
+            private static double ConvertBodyFatPercentageString2Int( string weight )
+            {
+                // TODO: チェックして処理
                 return Double.Parse( weight );
             }
 
