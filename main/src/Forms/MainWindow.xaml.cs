@@ -149,6 +149,9 @@ namespace SimpleWeightManager
             wpfPlot1.Plot.XTicks( new string[]{} );
             wpfPlot1.Plot.Clear();
 
+            // [Official demo](https://github.com/ScottPlot/ScottPlot/blob/1f68020e0c874140cd668752cf9769398727c3a8/src/demo/ScottPlot.Demo.WPF/WpfDemos/PlotInScrollViewer.xaml.cs)
+            wpfPlot1.Configuration.ScrollWheelZoom = false;
+
             if( !dateWeightManager.IsEmpty() )
             {
                 int N = dateWeightManager.Count();
