@@ -72,11 +72,13 @@ namespace SimpleWeightManager
             var newWeight = this.dateWeightManager.FetchLatestWeight();
             if( newWeight != null )
             {
-                additionWindowViewModel.Height     = newWeight.Height;
-                additionWindowViewModel.Weight2Aim = newWeight.Weight2Aim;
+                additionWindowViewModel.Height            = newWeight.Height;
+                additionWindowViewModel.Weight            = newWeight.Weight;
+                additionWindowViewModel.Weight2Aim        = newWeight.Weight2Aim;
+                additionWindowViewModel.BodyFatPercentage = newWeight.BodyFatPercentage;
+                additionWindowViewModel.Weight2Aim        = newWeight.Weight2Aim;
             }
             additionWindowViewModel.Notes = notesTextBox.Text;
-            additionWindowViewModel.BodyFatPercentage = "0";
             if( additionWindow.ShowDialog() == true )
             {
                 item2.IsEnabled = true;

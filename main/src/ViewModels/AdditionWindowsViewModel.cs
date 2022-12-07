@@ -22,10 +22,11 @@ namespace SimpleWeightManager
             public AdditionWindowViewModel()
             {
                 this.TargetDate = System.DateTime.Today;
-                this.Height     = "0.0";
-                this.Weight     = "0.0";
-                this.Weight2Aim = "0.0";
-                this.Notes      = "";
+                this.Height            = "0.0";
+                this.Weight            = "0.0";
+                this.Weight2Aim        = "0.0";
+                this.BodyFatPercentage = "0";
+                this.Notes             = "";
             }
 
             private DateTime targetDate;
