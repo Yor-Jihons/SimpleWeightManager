@@ -40,6 +40,7 @@ namespace SimpleWeightManager
             {
                 dateWeightManager = ClassMappings.DateWeightManager.CreateAsNew( xmlFilepath );
                 dateWeightManager.Save();
+                this.ReflectGraph();
                 return;
             }
             item2.IsEnabled = true;
