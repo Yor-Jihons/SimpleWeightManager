@@ -87,16 +87,24 @@ namespace SimpleWeightManager
                 DateWeightInfo.Save( this.infos, this.filepath );
             }
 
-            public bool Has( DateWeight dateWeight )
+            public bool Has( DateWeight dateWeight, out int pos )
             {
                 var comparer = new DateWeightComparer();
-            return (this.infos.DateWeights.BinarySearch( dateWeight, comparer ) >= 0 ? true : false);
+                pos = this.infos.DateWeights.BinarySearch( dateWeight, comparer );
+            return ( pos >= 0 ? true : false);
             }
 
             public void Add( DateWeight dateWeight )
             {
                 this.infos.DateWeights.Add( dateWeight );
                 this.infos.DateWeights.Sort( (a, b) => a.CompareTo(b) );
+            }
+
+            public bool Edit( int pos, DateWeight dateWeight )
+            {
+                if( pos <= -1 || pos >= this.infos.DateWeights.Count ) return false;
+                this.infos.DateWeights[ pos ] = dateWeight;
+            return true;
             }
 
             public void Clear()
