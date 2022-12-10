@@ -27,6 +27,8 @@
                         <MenuItem Name="additionMenuItem" Header="データの追加(_A)" Click="AdditionMenuItem_Click" />
                         <MenuItem Name="initMenuItem" Header="初期化(_D)" Click="InitMenuItem_Click" />
                     </MenuItem>
+                    <MenuItem Name="bodyFatPercentageCheckableMenuItem" Header="体脂肪率をグラフに表示する(_B)"
+                        Click="BodyFatPercentageCheckableMenuItem_Click" IsCheckable="true" />
                 </Menu>
             </StackPanel>
 
