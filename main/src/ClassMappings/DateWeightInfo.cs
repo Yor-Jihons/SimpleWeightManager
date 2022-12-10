@@ -37,6 +37,9 @@ namespace SimpleWeightManager
 
             }
 
+            [System.Xml.Serialization.XmlElement("isbodyfatpercentageshowed")]
+            public int IsBodyFatPercentageShowed{ get; set; } = 1;
+
             [System.Xml.Serialization.XmlElement("datewight")]
             public System.Collections.Generic.List<DateWeight> DateWeights{ get; set;}
 

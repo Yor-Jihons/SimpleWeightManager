@@ -45,6 +45,8 @@ namespace SimpleWeightManager
             }
             initMenuItem.IsEnabled = true;
 
+            bodyFatPercentageCheckableMenuItem.IsChecked = this.dateWeightManager.IsBodyFatPercentageShowed;
+
             this.ReflectGraph();
             this.ReflectDataCards();
             this.ReflectMessage();
@@ -61,7 +63,7 @@ namespace SimpleWeightManager
         }
 
         /// <summary>
-        /// The event when the item1 of the menu. (To add weights.)
+        /// The event when the item of the menu. (To add weights.)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -130,7 +132,7 @@ namespace SimpleWeightManager
         }
 
         /// <summary>
-        /// The event when the item2 of the menu. (To delete all weights.)
+        /// The event when the item of the menu. (To delete all weights.)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -168,6 +170,18 @@ namespace SimpleWeightManager
         }
 
         /// <summary>
+        /// The event when the item of the menu. (To switch whether the graph shows the body-fat-percentages or not.)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BodyFatPercentageCheckableMenuItem_Click( object sender, System.Windows.RoutedEventArgs e )
+        {
+            // TODO:
+            this.dateWeightManager.IsBodyFatPercentageShowed = bodyFatPercentageCheckableMenuItem.IsChecked;
+            this.ReflectGraph();
+        }
+
+        /// <summary>
         /// To reflect the data to the graph.
         /// </summary>
         private void ReflectGraph()
@@ -185,8 +199,11 @@ namespace SimpleWeightManager
                 wpfPlot1.Plot.XTicks( graphElement.Xticks );
                 wpfPlot1.Plot.Title( "体重の変動" );
                 wpfPlot1.Plot.AddSignalXY( graphElement.Ticks, graphElement.Weights, label: "体重" );
-                wpfPlot1.Plot.AddSignalXY( graphElement.Ticks, graphElement.BodyFatPercentages, label: "体脂肪率" );
                 wpfPlot1.Plot.XAxis.TickLabelStyle( rotation: 45 );
+                if( bodyFatPercentageCheckableMenuItem.IsChecked )
+                {
+                    wpfPlot1.Plot.AddSignalXY( graphElement.Ticks, graphElement.BodyFatPercentages, label: "体脂肪率" );
+                }
                 wpfPlot1.Plot.Render();
             }
             wpfPlot1.Refresh();

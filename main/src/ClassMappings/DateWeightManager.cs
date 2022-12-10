@@ -150,6 +150,29 @@ namespace SimpleWeightManager
                 return Double.Parse( weight );
             }
 
+            // DateWeightManager.CreateBool4IsBodyFatPercentageShowed
+            public static bool CreateBool4IsBodyFatPercentageShowed( DateWeightManager manager )
+            {
+                return (manager.infos.IsBodyFatPercentageShowed == 0 ? false : true);
+            }
+
+            public static int CreateInt4BodyFatPercentageShowed( bool state )
+            {
+                return (state ? 1 : 0);
+            }
+
+            public bool IsBodyFatPercentageShowed
+            {
+                get
+                {
+                    return (this.infos.IsBodyFatPercentageShowed == 0 ? false : true);
+                }
+                set
+                {
+                    this.infos.IsBodyFatPercentageShowed = (value ? 1 : 0);
+                }
+            }
+
             private DateWeightInfo infos;
             private string filepath;
         }
