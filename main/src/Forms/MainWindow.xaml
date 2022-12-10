@@ -24,8 +24,8 @@
             <StackPanel Grid.Row="0" Grid.Column="0">
                 <Menu>
                     <MenuItem Header="操作(_O)">
-                        <MenuItem Name="item1" Header="データの追加(_A)" Click="Items1_Click" />
-                        <MenuItem Name="item2" Header="初期化(_D)" Click="Items2_Click" />
+                        <MenuItem Name="additionMenuItem" Header="データの追加(_A)" Click="AdditionMenuItem_Click" />
+                        <MenuItem Name="initMenuItem" Header="初期化(_D)" Click="InitMenuItem_Click" />
                     </MenuItem>
                 </Menu>
             </StackPanel>
