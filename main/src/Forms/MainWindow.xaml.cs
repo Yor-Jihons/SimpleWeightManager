@@ -30,7 +30,7 @@ namespace SimpleWeightManager
         {
             InitializeComponent();
 
-            item2.IsEnabled = false;
+            initMenuItem.IsEnabled = false;
 
             var thisDirpath = Directory.GetParent( Environment.GetCommandLineArgs()[0] ).ToString();
             var xmlFilepath = System.IO.Path.Join( thisDirpath, "weights.xml" );
@@ -43,7 +43,8 @@ namespace SimpleWeightManager
                 this.ReflectGraph();
                 return;
             }
-            item2.IsEnabled = true;
+            initMenuItem.IsEnabled = true;
+
             this.ReflectGraph();
             this.ReflectDataCards();
             this.ReflectMessage();
@@ -64,7 +65,7 @@ namespace SimpleWeightManager
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void Items1_Click( object sender, System.Windows.RoutedEventArgs e )
+        public void AdditionMenuItem_Click( object sender, System.Windows.RoutedEventArgs e )
         {
             var additionWindowViewModel = new ViewModels.AdditionWindowViewModel();
             var additionWindow = new AdditionWindow( additionWindowViewModel );
@@ -85,7 +86,7 @@ namespace SimpleWeightManager
                 return;
             }
 
-            item2.IsEnabled = true;
+            initMenuItem.IsEnabled = true;
 
             var newest = ClassMappings.DateWeight.Create(
                 additionWindowViewModel.TargetDate,
@@ -133,7 +134,7 @@ namespace SimpleWeightManager
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void Items2_Click( object sender, System.Windows.RoutedEventArgs e )
+        public void InitMenuItem_Click( object sender, System.Windows.RoutedEventArgs e )
         {
             var res = MessageBox.Show( "本当に初期化しますか?", "注意", MessageBoxButton.YesNo, MessageBoxImage.Exclamation, MessageBoxResult.No, MessageBoxOptions.None );
             if( res != MessageBoxResult.Yes ) return;
@@ -163,7 +164,7 @@ namespace SimpleWeightManager
             mesTextBox.Text = defaultStr;
             notesTextBox.Text = defaultStr;
 
-            item2.IsEnabled = false;
+            initMenuItem.IsEnabled = false;
         }
 
         /// <summary>
