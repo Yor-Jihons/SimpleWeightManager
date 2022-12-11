@@ -176,8 +176,8 @@ namespace SimpleWeightManager
         /// <param name="e"></param>
         private void BodyFatPercentageCheckableMenuItem_Click( object sender, System.Windows.RoutedEventArgs e )
         {
-            // TODO:
             this.dateWeightManager.IsBodyFatPercentageShowed = bodyFatPercentageCheckableMenuItem.IsChecked;
+            this.dateWeightManager.Save();
             this.ReflectGraph();
         }
 
