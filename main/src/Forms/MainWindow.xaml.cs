@@ -103,7 +103,7 @@ namespace SimpleWeightManager
             {
                 // すでに登録されているため更新するかどうか聞いて、データを更新する
                 var ret = System.Windows.MessageBox.Show(
-                    "すでに記録されていますが更新しますか?",
+                    "指定の日付はすでに登録されていますが、上書きしますか?",
                     "上書き確認",
                     MessageBoxButton.YesNoCancel,
                     MessageBoxImage.Exclamation,
