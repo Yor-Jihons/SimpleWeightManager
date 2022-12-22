@@ -23,9 +23,18 @@ namespace SimpleWeightManager
         /// <summary>
         /// Constructor.
         /// </summary>
-        public AdditionWindow( ViewModels.AdditionWindowViewModel viewModel )
+        /// <param name="viewModel">The object of the class AdditionWindowViewModel, for the binding.</param>
+        /// <param name="isBodyFatPercentageShowed">Whether the body fat percentage showed or not.</param>
+        public AdditionWindow( ViewModels.AdditionWindowViewModel viewModel, bool isBodyFatPercentageShowed )
         {
             InitializeComponent();
+
+            if( !isBodyFatPercentageShowed )
+            {
+                this.bodyFatPercentageTextBox.Visibility = Visibility.Hidden;
+                this.label6.Visibility = Visibility.Hidden;
+                this.label7.Visibility = Visibility.Hidden;
+            }
 
             this.m_viewModel = viewModel;
 

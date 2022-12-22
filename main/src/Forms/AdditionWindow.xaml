@@ -39,9 +39,9 @@
             <TextBox Name="weightTextBox" Grid.Row="2" Grid.Column="1" FontSize="20" BorderThickness="0" PreviewTextInput="TextBoxPrice_PreviewTextInput" InputMethod.IsInputMethodEnabled="False" CommandManager.PreviewExecuted="TextBoxPrice_PreviewExecuted" Text="{Binding Weight}" />
             <Label Content="kg" Grid.Row="2" Grid.Column="2" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
 
-            <Label Content="体脂肪率(_B):" Grid.Row="3" Grid.Column="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
+            <Label Content="体脂肪率(_B):" Grid.Row="3" Grid.Column="0" Name="label6" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
             <TextBox Name="bodyFatPercentageTextBox" Grid.Row="3" Grid.Column="1" FontSize="20" BorderThickness="0" PreviewTextInput="TextBoxPrice_PreviewTextInput" InputMethod.IsInputMethodEnabled="False" CommandManager.PreviewExecuted="TextBoxPrice_PreviewExecuted" Text="{Binding BodyFatPercentage}" />
-            <Label Content="%" Grid.Row="3" Grid.Column="2" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+            <Label Content="%" Grid.Row="3" Grid.Column="2" HorizontalContentAlignment="Left" Name="label7" VerticalContentAlignment="Center" />
 
             <Label Content="目標体重(_T):" Grid.Row="4" Grid.Column="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
             <TextBox Name="weight2AimTextBox" Grid.Row="4" Grid.Column="1" FontSize="20" BorderThickness="0" PreviewTextInput="TextBoxPrice_PreviewTextInput" InputMethod.IsInputMethodEnabled="False" CommandManager.PreviewExecuted="TextBoxPrice_PreviewExecuted" Text="{Binding Weight2Aim}" />

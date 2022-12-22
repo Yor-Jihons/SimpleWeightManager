@@ -70,7 +70,7 @@ namespace SimpleWeightManager
         public void AdditionMenuItem_Click( object sender, System.Windows.RoutedEventArgs e )
         {
             var additionWindowViewModel = new ViewModels.AdditionWindowViewModel();
-            var additionWindow = new AdditionWindow( additionWindowViewModel );
+            var additionWindow = new AdditionWindow( additionWindowViewModel, this.dateWeightManager.IsBodyFatPercentageShowed );
 
             var newWeight = this.dateWeightManager.FetchLatestWeight();
             if( newWeight != null )
