@@ -102,7 +102,6 @@ namespace SimpleWeightManager
             /// <returns>The date string.</returns>
             public string ToDateString( ClassMappings.DateWeightDateType type, string defaultStr )
             {
-                // TODO: 日付がない場合はreturn defaultStr;
                 var d = new System.DateTime( this.Year, this.Month, this.Day );
                 string format = (type == DateWeightDateType.ForGraph ? "M/d" : "yyyy/M/d dddd");
             return d.ToString( format );

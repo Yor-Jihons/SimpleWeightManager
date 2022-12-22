@@ -140,13 +140,11 @@ namespace SimpleWeightManager
 
             private static double ConvertWeightString2Int( string weight )
             {
-                // TODO: チェックして処理
                 return Double.Parse( weight );
             }
 
             private static double ConvertBodyFatPercentageString2Int( string weight )
             {
-                // TODO: チェックして処理
                 return Double.Parse( weight );
             }
 
