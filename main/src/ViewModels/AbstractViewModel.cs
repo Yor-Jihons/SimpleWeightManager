@@ -1,31 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿/**
+* @file
+* @brief The abstract class for the View-Model.
+*/
 
-namespace SimpleWeightManager
+
+namespace SimpleWeightManager.ViewModels
 {
-    namespace ViewModels
+    /// <summary>
+    /// The abstract class for the View-Model.
+    /// </summary>
+    public class AbstractViewModel : System.ComponentModel.INotifyPropertyChanged
     {
-        public class AbstractViewModel : System.ComponentModel.INotifyPropertyChanged
+        /// <summary>
+        /// Event Handler.
+        /// </summary>
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged = null;
+
+        /// <summary>
+        /// Notify that propertyName is changed.
+        /// </summary>
+        /// <param name="propertyName">The string which means a property.</param>
+        protected void NotifyPropertyChanged( string propertyName )
         {
-            public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged = null;
-            protected void NotifyPropertyChanged( string propertyName )
+            if( PropertyChanged != null )
             {
-                if( PropertyChanged != null )
-                {
-                    this.PropertyChanged?.Invoke( this, new System.ComponentModel.PropertyChangedEventArgs(propertyName) );
-                }
+                this.PropertyChanged?.Invoke( this, new System.ComponentModel.PropertyChangedEventArgs(propertyName) );
             }
         }
     }
