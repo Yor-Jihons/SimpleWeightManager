@@ -1,14 +1,16 @@
-using System.Text;
-using System;
+/**
+* @file
+* @brief The enum for the method DateWeight.ToDateString.
+*/
 
-namespace SimpleWeightManager
+namespace SimpleWeightManager.ClassMappings
 {
-    namespace ClassMappings
+    /// <summary>
+    /// The enum for the method DateWeight.ToDateString.
+    /// </summary>
+    public enum DateWeightDateType
     {
-        public enum DateWeightDateType
-        {
-            ForGraph = 0,
-            ForDataCard = 1
-        }
+        ForGraph = 0,
+        ForDataCard = 1
     }
 }
