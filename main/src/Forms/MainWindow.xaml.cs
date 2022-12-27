@@ -1,20 +1,11 @@
-﻿using System.Reflection;
+﻿/**
+* @file
+* @brief The MainWindow.
+*/
+
 using System.IO;
-using System.Xml.Linq;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace SimpleWeightManager
 {
@@ -218,7 +209,9 @@ namespace SimpleWeightManager
             mesTextBox.Text = dateWeightManager.ToMessageString();
         }
 
-
+        /// <summary>
+        /// Reflect the data to the DataCard.
+        /// </summary>
         public void ReflectDataCards()
         {
             if( dateWeightManager.Count() == 0 )
@@ -265,6 +258,7 @@ namespace SimpleWeightManager
             }
         }
 
+        /// <value>The manager for DateWeight.</value>
         private ClassMappings.DateWeightManager dateWeightManager;
     }
 }
