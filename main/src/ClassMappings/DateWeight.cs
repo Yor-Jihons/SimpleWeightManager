@@ -1,6 +1,6 @@
 /**
 * @file
-* @brief The class to contain the data.
+* @brief The class to contain the data, with the XML-file. (sub)
 */
 
 using System.Text;
@@ -9,7 +9,8 @@ using System;
 namespace SimpleWeightManager.ClassMappings
 {
     /// <summary>
-    /// The class to contain the data.
+    /// The class to contain the data, with the XML-file. (sub)
+    /// This means the block the one data.
     /// </summary>
     public class DateWeight : IComparable
     {
