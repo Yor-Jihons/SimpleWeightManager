@@ -142,12 +142,22 @@ namespace SimpleWeightManager.ClassMappings
         return ( pos >= 0 ? true : false);
         }
 
+        /// <summary>
+        /// Add the weight data, to the list which this object manages.
+        /// </summary>
+        /// <param name="dateWeight">The weight data, to the list which this object manages.</param>
         public void Add( DateWeight dateWeight )
         {
             this.infos.DateWeights.Add( dateWeight );
             this.infos.DateWeights.Sort( (a, b) => a.CompareTo(b) );
         }
 
+        /// <summary>
+        /// Edit the object which is placed at pos.
+        /// </summary>
+        /// <param name="pos">The index which is placed in the list (which this object manages).</param>
+        /// <param name="dateWeight">The dist data.</param>
+        /// <returns>Returns true if this object edited, otherwise returns false.</returns>
         public bool Edit( int pos, DateWeight dateWeight )
         {
             if( pos <= -1 || pos >= this.infos.DateWeights.Count ) return false;
@@ -155,16 +165,27 @@ namespace SimpleWeightManager.ClassMappings
         return true;
         }
 
+        /// <summary>
+        /// Clear all the data from the list which this object manages.
+        /// </summary>
         public void Clear()
         {
             this.infos.DateWeights.Clear();
         }
 
+        /// <summary>
+        /// Count the size of the list which this object manages.
+        /// </summary>
+        /// <returns>The size of the list which this object manages.</returns>
         public int Count()
         {
             return this.infos.DateWeights.Count;
         }
 
+        /// <summary>
+        /// Create the string for aim. (message)
+        /// </summary>
+        /// <returns>The string for aim. (message) Like "目標体重: 65kg".</returns>
         public string ToAimString()
         {
             if( this.infos.DateWeights.Count <= 0 ) return "";
@@ -179,6 +200,10 @@ namespace SimpleWeightManager.ClassMappings
         return builder.ToString();
         }
 
+        /// <summary>
+        /// Create the string for message.
+        /// </summary>
+        /// <returns>The string for message.</returns>
         public string ToMessageString()
         {
             if( this.infos.DateWeights.Count <= 0 ) return "";
@@ -186,26 +211,47 @@ namespace SimpleWeightManager.ClassMappings
         return d.DifferenceFromGoal();
         }
 
+        /// <summary>
+        /// Convert weight string to the double, in order to show to the graph.
+        /// </summary>
+        /// <param name="weight">The string as weight, like "57.6".</param>
+        /// <returns>The double value converted from string.</returns>
         private static double ConvertWeightString2Int( string weight )
         {
             return Double.Parse( weight );
         }
 
-        private static double ConvertBodyFatPercentageString2Int( string weight )
+        /// <summary>
+        /// Covert the string as body-fat-percentage to double.
+        /// </summary>
+        /// <param name="bodyFatPercentage">The string as body-fat-percentage, like "40".</param>
+        /// <returns>The double value converted from string.</returns>
+        private static double ConvertBodyFatPercentageString2Int( string bodyFatPercentage )
         {
-            return Double.Parse( weight );
+            return Double.Parse( bodyFatPercentage );
         }
 
+        /// <summary>
+        /// Create the bool-value, whether the body-fat-percentage showed or not, in order to affect the Windows.
+        /// </summary>
+        /// <param name="manager">The object of this class.</param>
+        /// <returns>The bool-value, whether the body-fat-percentage showed or not.</returns>
         public static bool CreateBool4IsBodyFatPercentageShowed( DateWeightManager manager )
         {
             return (manager.infos.IsBodyFatPercentageShowed == 0 ? false : true);
         }
 
+        /// <summary>
+        /// Create the int-value, whether the body-fat-percentage showed or not, in order to save it to the XML-file.
+        /// </summary>
+        /// <param name="state"></param>
+        /// <returns>The int-value, whether the body-fat-percentage showed or not.</returns>
         public static int CreateInt4BodyFatPercentageShowed( bool state )
         {
             return (state ? 1 : 0);
         }
 
+        /// <value>Whether the body-fat-percentage showed or not.</value>
         public bool IsBodyFatPercentageShowed
         {
             get
@@ -218,7 +264,10 @@ namespace SimpleWeightManager.ClassMappings
             }
         }
 
+        /// <value>The object of the class DateWeightInfo which this object manages.</value>
         private DateWeightInfo infos;
+
+        /// <value>The file path as the XML-file.</value>
         private string filepath;
     }
 }
