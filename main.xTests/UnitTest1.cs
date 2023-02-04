@@ -98,4 +98,55 @@ public class UnitTest1
         Assert.Equal( "64", dateWeightInfo.DateWeights[2].Weight2Aim );
         Assert.Equal( "0", dateWeightInfo.DateWeights[2].BodyFatPercentage );
     }
+
+    [Fact]
+    public void DateWeightManagerTest()
+    {
+        string filepath = @"..\..\..\weights.xml";
+        var dateWeightInfo = SimpleWeightManager.ClassMappings.DateWeightManager.Create( filepath );
+
+        Assert.False( dateWeightInfo.IsEmpty() );
+
+        var date1 = dateWeightInfo.FetchLatestWeight();
+        var date2 = SimpleWeightManager.ClassMappings.DateWeight.Create( new System.DateTime( 2022, 12, 12 ), "170.3", "73.0", "64", "0" );
+        Assert.Equal( date2, date1 );
+
+        var date3 = dateWeightInfo.FetchPrevWeight();
+        var date4 = SimpleWeightManager.ClassMappings.DateWeight.Create( new System.DateTime( 2022, 12, 11 ), "170.3", "73.4", "64", "0" );
+        Assert.Equal( date4, date3 );
+
+        // 存在しない場合に追加する
+        var date5 = SimpleWeightManager.ClassMappings.DateWeight.Create( new System.DateTime( 2022, 12, 17 ), "163.3", "73.4", "64", "54" );
+        int pos_date5      = -1;
+        bool existed_date5 = dateWeightInfo.Has( date5, out pos_date5 );
+        Assert.False( existed_date5 );
+
+        dateWeightInfo.Add( date5 );
+
+        var date6 = dateWeightInfo.FetchLatestWeight();
+        Assert.Equal( date5, date6 );
+
+        // 存在している場合は変更する
+        var date7 = SimpleWeightManager.ClassMappings.DateWeight.Create( new System.DateTime( 2022, 12, 7 ), "170.3", "73.4", "64", "0" );
+        int pos_date7      = -1;
+        bool existed_date7 = dateWeightInfo.Has( date6, out pos_date7 );
+        Assert.True( existed_date7 );
+
+        var date8 = dateWeightInfo.FetchLatestWeight();
+        Assert.Equal( "2022/12/17 土曜日\n163.3cm\n73.4kg", date8.ToString() );
+
+        var date9 = SimpleWeightManager.ClassMappings.DateWeight.Create( new System.DateTime( 2022, 12, 7 ), "180", "63", "64", "0" );
+        Assert.True( dateWeightInfo.Edit( pos_date7, date8 ) );
+
+        var date10 = dateWeightInfo.FetchLatestWeight();
+        Assert.Equal( "2022/12/17 土曜日\n163.3cm\n73.4kg", date10.ToString() );
+
+        Assert.Equal( "目標体重: 54kg", dateWeightInfo.ToAimString() );
+
+        Assert.Equal( "目標まであと -19.400000000000006kg！", dateWeightInfo.ToMessageString() );
+
+        dateWeightInfo.Clear();
+
+        Assert.Equal( 0, dateWeightInfo.Count() );
+    }
 }

@@ -163,6 +163,7 @@ namespace SimpleWeightManager.ClassMappings
         {
             if( pos <= -1 || pos >= this.infos.DateWeights.Count ) return false;
             this.infos.DateWeights[ pos ] = dateWeight;
+            this.infos.DateWeights.Sort( (a, b) => a.CompareTo(b) );
         return true;
         }
 
