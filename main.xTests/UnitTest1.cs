@@ -149,4 +149,17 @@ public class UnitTest1
 
         Assert.Equal( 0, dateWeightInfo.Count() );
     }
+
+    [Fact]
+    public void GraphElementTest()
+    {
+        string filepath = @"..\..\..\weights.xml";
+        var dateWeightInfo = SimpleWeightManager.ClassMappings.DateWeightManager.Create( filepath );
+
+        var graphElement = dateWeightInfo.Fetch();
+
+        Assert.Equal( 73.0, graphElement.Weights[1] );
+        Assert.Equal( 1, graphElement.Ticks[1] );
+        Assert.Equal( "12/8", graphElement.Xticks[1] );
+    }
 }
