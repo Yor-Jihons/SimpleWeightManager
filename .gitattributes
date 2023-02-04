@@ -1,4 +1,2 @@
 # batファイルをC sharpとみなす
 *.bat linguist-language=CSharp
-
-thinking.txt
