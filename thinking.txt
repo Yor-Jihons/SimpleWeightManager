@@ -1,0 +1,6 @@
+[単体テスト対象]
+@ SimpleWeightManager.ClassMappings.DateWeight
+@ SimpleWeightManager.ClassMappings.DateWeightComparer
+@ SimpleWeightManager.ClassMappings.DateWeightInfo (Root)
+@ SimpleWeightManager.ClassMappings.DateWeightManager
+@ SimpleWeightManager.GraphElements.GraphElement

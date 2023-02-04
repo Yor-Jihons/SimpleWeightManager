@@ -24,7 +24,7 @@ exit /b
 rem ------------------------- 関数定義 -------------------------
 
 :RunDebug
-    %CSDEBUGEXE% --htmlfilepath="abc.html" --version
+    start %CSDEBUGEXE%
 exit /b 0
 
 :RunRelease
