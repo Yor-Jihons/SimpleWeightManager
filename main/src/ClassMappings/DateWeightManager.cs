@@ -55,6 +55,7 @@ namespace SimpleWeightManager.ClassMappings
         /// </summary>
         public void CutDummyData()
         {
+            // TODO: ???
             for( int i = 0; i < this.infos.DateWeights.Count; i++ )
             {
                 System.Windows.MessageBox.Show( infos.DateWeights[i].ToString() );
