@@ -55,6 +55,7 @@ namespace SimpleWeightManager.ClassMappings
         /// </summary>
         public void CutDummyData()
         {
+            // TODO: ???
             for( int i = 0; i < this.infos.DateWeights.Count; i++ )
             {
                 System.Windows.MessageBox.Show( infos.DateWeights[i].ToString() );
@@ -162,6 +163,7 @@ namespace SimpleWeightManager.ClassMappings
         {
             if( pos <= -1 || pos >= this.infos.DateWeights.Count ) return false;
             this.infos.DateWeights[ pos ] = dateWeight;
+            this.infos.DateWeights.Sort( (a, b) => a.CompareTo(b) );
         return true;
         }
 

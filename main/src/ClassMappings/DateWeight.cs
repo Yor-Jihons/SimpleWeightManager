@@ -56,9 +56,9 @@ namespace SimpleWeightManager.ClassMappings
         /// To calculate the BMI.
         /// </summary>
         /// <param name="dateWeight">The object of this class.</param>
-        /// <param name="defaultStr">The string data for the default value.</param>
+        /// <param name="defaultStr">The string data for the default value. (def: "---")</param>
         /// <returns>The string as a BMI text.</returns>
-        public static string CalcBMI( ClassMappings.DateWeight dateWeight, string defaultStr )
+        public static string CalcBMI( ClassMappings.DateWeight dateWeight, string defaultStr = "---" )
         {
             if( dateWeight == null ) return "";
 
@@ -75,9 +75,9 @@ namespace SimpleWeightManager.ClassMappings
         /// To Calculate the best weight.
         /// </summary>
         /// <param name="dateWeight">An object of this class.</param>
-        /// <param name="defaultStr">The string data for the default value.</param>
+        /// <param name="defaultStr">The string data for the default value. (def: "---")</param>
         /// <returns></returns>
-        public static string CalcBestWeight( ClassMappings.DateWeight dateWeight, string defaultStr )
+        public static string CalcBestWeight( ClassMappings.DateWeight dateWeight, string defaultStr = "---" )
         {
             // 計算式: 適正体重(kg) = 身長(m) × 身長(m) × 22
             // 日本医師会HPより
@@ -112,10 +112,11 @@ namespace SimpleWeightManager.ClassMappings
         /// To make the date string.
         /// </summary>
         /// <param name="type">The data of the enum DateWeightDateType.</param>
-        /// <param name="defaultStr">The string data for the default value.</param>
+        /// <param name="defaultStr">The string data for the default value. (def: "---")</param>
         /// <returns>The date string.</returns>
-        public string ToDateString( ClassMappings.DateWeightDateType type, string defaultStr )
+        public string ToDateString( ClassMappings.DateWeightDateType type, string defaultStr = "---" )
         {
+            if( this.Year == 0 || this.Month == 0 || this.Day == 0 ) return defaultStr;
             var d = new System.DateTime( this.Year, this.Month, this.Day );
             string format = (type == DateWeightDateType.ForGraph ? "M/d" : "yyyy/M/d dddd");
         return d.ToString( format );
@@ -145,9 +146,9 @@ namespace SimpleWeightManager.ClassMappings
         /// <summary>
         /// Create the string for height.
         /// </summary>
-        /// <param name="defaultStr">The default value when the height is empty.</param>
+        /// <param name="defaultStr">The default value when the height is empty. (def: "---")</param>
         /// <returns>the string for height.</returns>
-        public string ToHeightString( string defaultStr )
+        public string ToHeightString( string defaultStr = "---" )
         {
             const string UNIT = "cm";
             if( this.Height.Equals( string.Empty ) || this.Height.Equals( "0.0" ) || this.Height.Equals( "0.00" ) ) return defaultStr;
@@ -157,9 +158,9 @@ namespace SimpleWeightManager.ClassMappings
         /// <summary>
         /// Create the string for weight.
         /// </summary>
-        /// <param name="defaultStr">The default value when the weight is empty.</param>
+        /// <param name="defaultStr">The default value when the weight is empty. (def: "---")</param>
         /// <returns>the string for weight.</returns>
-        public string ToWeightString( string defaultStr )
+        public string ToWeightString( string defaultStr = "---" )
         {
             const string UNIT = "kg";
             if( this.Weight.Equals( string.Empty ) || this.Weight.Equals( "0.0" ) || this.Weight.Equals( "0.00" ) ) return defaultStr;
@@ -169,9 +170,9 @@ namespace SimpleWeightManager.ClassMappings
         /// <summary>
         /// Create the string for body fat percentage.
         /// </summary>
-        /// <param name="defaultStr">The default value when the body fat percentage is empty.</param>
+        /// <param name="defaultStr">The default value when the body fat percentage is empty. (def: "---")</param>
         /// <returns>the string for body fat percentage.</returns>
-        public string ToBodyFatPercentageString( string defaultStr )
+        public string ToBodyFatPercentageString( string defaultStr = "---" )
         {
             const string UNIT = "%";
             if( this.BodyFatPercentage.Equals( string.Empty ) || this.BodyFatPercentage.Equals( "0" ) ) return defaultStr;
@@ -242,6 +243,6 @@ namespace SimpleWeightManager.ClassMappings
 
         /// <value>The body fat percentage which the user input.</value>
         [System.Xml.Serialization.XmlElement("bodyfatpercentage")]
-        public string BodyFatPercentage{ get; set; } = "0";
+        public string BodyFatPercentage{ get; set; } = "0.0";
     }
 }
