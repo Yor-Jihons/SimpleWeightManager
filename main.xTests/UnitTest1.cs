@@ -81,8 +81,21 @@ public class UnitTest1
     }
 
     [Fact]
-    public void SS()
+    public void DateWeightInfoTest()
     {
-        // 
+        string filepath = @"..\..\..\weights.xml";
+        var dateWeightInfo = SimpleWeightManager.ClassMappings.DateWeightInfo.Load( filepath );
+
+        Assert.Equal( 0, dateWeightInfo.IsBodyFatPercentageShowed );
+
+        Assert.Equal( 5, dateWeightInfo.DateWeights.Count );
+        Assert.Equal( 2022, dateWeightInfo.DateWeights[1].Year );
+        Assert.Equal( 12, dateWeightInfo.DateWeights[1].Month );
+        Assert.Equal( 8, dateWeightInfo.DateWeights[1].Day );
+
+        Assert.Equal( "170.3", dateWeightInfo.DateWeights[2].Height );
+        Assert.Equal( "74.5", dateWeightInfo.DateWeights[2].Weight );
+        Assert.Equal( "64", dateWeightInfo.DateWeights[2].Weight2Aim );
+        Assert.Equal( "0", dateWeightInfo.DateWeights[2].BodyFatPercentage );
     }
 }
