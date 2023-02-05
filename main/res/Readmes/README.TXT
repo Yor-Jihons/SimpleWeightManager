@@ -29,4 +29,8 @@
                @ 本体: MITライセンス
                @ 背景画像: [CC0](https://creativecommons.org/share-your-work/public-domain/cc0) from [GAHAG | 著作権フリー写真・イラスト素材集](https://gahag.net/)
                @ ログ処理: BSD-3-Clause from [NLog - NuGet Gallery](https://www.nuget.org/packages/NLog/)
+               @ [Microsoft.Win32.SystemEvents 6.0.1](https://www.nuget.org/packages/Microsoft.Win32.SystemEvents)
+               @ [ScottPlot 4.1.45](https://www.nuget.org/packages/ScottPlot/4.1.45)
+               @ [ScottPlot.Wpf 4.1.45](https://www.nuget.org/packages/ScottPlot.WPF/5.0.0-beta)
+               @ [System.Drawing.Common 6.0.0](https://www.nuget.org/packages/System.Drawing.Common)
                @ ICON: CC Atribution from [icon-icons.com](https://icon-icons.com/ja/%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3/%E3%82%A2%E3%83%97%E3%83%AA/129133)
