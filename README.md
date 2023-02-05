@@ -51,7 +51,7 @@ Step 5. Click the button "登録".
 
 ## 4. Licenses
 
-This library is released under the MIT License.
+This product is released under the MIT License.
 
 [NLog - NuGet Gallery](https://www.nuget.org/packages/NLog/) is under the BSD-3-Clause license.
 
