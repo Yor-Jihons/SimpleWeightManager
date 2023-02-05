@@ -7,6 +7,10 @@ The product to visualize own weight transition, in order to keep motivation for 
 - dotnet 6.0.202
 - Windows OS
 - [NLog - NuGet Gallery](https://www.nuget.org/packages/NLog/)
+- [Microsoft.Win32.SystemEvents 6.0.1](https://www.nuget.org/packages/Microsoft.Win32.SystemEvents)
+- [ScottPlot 4.1.45](https://www.nuget.org/packages/ScottPlot/4.1.45)
+- [ScottPlot.Wpf 4.1.45](https://www.nuget.org/packages/ScottPlot.WPF/5.0.0-beta)
+- [System.Drawing.Common 6.0.0](https://www.nuget.org/packages/System.Drawing.Common)
 
 ## 2. Install
 
@@ -54,6 +58,14 @@ This library is released under the MIT License.
 The image files in the directory "main/res/Frames" are downloaded from [GAHAG | 著作権フリー写真・イラスト素材集](https://gahag.net/), and under the [CC0](https://creativecommons.org/share-your-work/public-domain/cc0) License.
 
 The Icon file are downloaded from [icon-icons.com](https://icon-icons.com/ja/%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3/%E3%82%A2%E3%83%97%E3%83%AA/129133), and under the CC Atribution.
+
+[Microsoft.Win32.SystemEvents 6.0.1](https://www.nuget.org/packages/Microsoft.Win32.SystemEvents) is under the MIT License.
+
+[ScottPlot 4.1.45](https://www.nuget.org/packages/ScottPlot/4.1.45) is under the MIT License.
+
+[ScottPlot.Wpf 4.1.45](https://www.nuget.org/packages/ScottPlot.WPF/5.0.0-beta) is under the MIT License.
+
+[System.Drawing.Common 6.0.0](https://www.nuget.org/packages/System.Drawing.Common) is under the MIT License.
 
 ## 5. Development Environment
 
