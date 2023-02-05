@@ -12,6 +12,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Condition="'$(Configuration)' != 'Debug'" Include="res\Readmes\README.TXT">
+      <Link>README.TXT</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="microsoft.win32.systemevents" Version="6.0.1" />
     <PackageReference Include="scottplot" Version="4.1.45" />
     <PackageReference Include="scottplot.wpf" Version="4.1.45" />
