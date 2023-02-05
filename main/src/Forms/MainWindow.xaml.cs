@@ -41,8 +41,6 @@ namespace SimpleWeightManager
             this.ReflectGraph();
             this.ReflectDataCards();
             this.ReflectMessage();
-
-            throw new System.Exception( "W" );
         }
 
         /// <summary>
