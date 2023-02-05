@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <PackageReference Include="microsoft.win32.systemevents" Version="6.0.1" />
+    <PackageReference Include="nlog" Version="5.1.1" />
     <PackageReference Include="scottplot" Version="4.1.45" />
     <PackageReference Include="scottplot.wpf" Version="4.1.45" />
     <PackageReference Include="system.drawing.common" Version="6.0.0" />

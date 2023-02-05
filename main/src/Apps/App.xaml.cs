@@ -15,6 +15,14 @@ namespace SimpleWeightManager
     public partial class App : Application
     {
         /// <summary>
+        /// Constructor.
+        /// </summary>
+        public App()
+        {
+            Loggers.Logger.SetLogInfo( "logfile", "error_log.log" );
+        }
+
+        /// <summary>
         /// The method which runs when this application runs.
         /// </summary>
         /// <param name="e"></param>
@@ -71,8 +79,9 @@ namespace SimpleWeightManager
         /// Show the message for exception.
         /// </summary>
         /// <param name="e"></param>
-        private void HandleException(Exception e)
+        private void HandleException( Exception e )
         {
+            App.logger.Fatal( e.ToString() );
             MessageBox.Show( $"エラーが発生しました\n{e?.ToString()}" );
             Environment.Exit(1);
         }
@@ -105,5 +114,7 @@ namespace SimpleWeightManager
         {
             this.Mutex.Destruct();
         }
+
+        public static Loggers.Logger logger = new Loggers.Logger();
     }
 }
