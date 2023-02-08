@@ -43,5 +43,23 @@
             <Setter Property="FontStretch" Value="UltraExpanded" />
             <Setter Property="FontSize" Value="17" />
         </Style>
+
+        <Style x:Key="DatePickerFont4Date" TargetType="DatePicker">
+            <Setter Property="FontFamily" Value="Century Gothic, メイリオ, Meiryo UI" />
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="FontStretch" Value="UltraExpanded" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontStyle" Value="Italic" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+
+        <Style x:Key="RegisterButtonFont" TargetType="Button">
+            <Setter Property="FontFamily" Value="Century Gothic, メイリオ, Meiryo UI" />
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="FontStretch" Value="UltraExpanded" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontStyle" Value="Italic" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
     </Application.Resources>
 </Application>
