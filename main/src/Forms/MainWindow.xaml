@@ -111,7 +111,7 @@
             </Grid>
             <TextBox x:Name="aimTextBox" Grid.Row="3" Grid.Column="0" Style="{StaticResource TextBoxFont4Message}" IsReadOnly="True" BorderThickness="0" Height="70" />
             <TextBox x:Name="mesTextBox" Grid.Row="4" Grid.Column="0" Style="{StaticResource TextBoxFont4Message}" IsReadOnly="True" BorderThickness="0" Height="70" />
-            <TextBox x:Name="notesTextBox" Grid.Row="5" Grid.Column="0" Style="{StaticResource TextBoxFont4Note}" Margin="10,0,10,10" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Height="150" />
+            <TextBox x:Name="notesTextBox" Grid.Row="5" Grid.Column="0" Style="{StaticResource TextBoxFont4Note}" Margin="10,0,10,10" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Height="150" IsReadOnly="True" />
         </Grid>
     </ScrollViewer>
 </Window>
