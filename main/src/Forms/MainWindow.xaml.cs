@@ -26,6 +26,11 @@ namespace SimpleWeightManager
             var thisDirpath = Directory.GetParent( Environment.GetCommandLineArgs()[0] ).ToString();
             var xmlFilepath = System.IO.Path.Join( thisDirpath, "weights.xml" );
 
+            this.Loaded += (s, e) => {
+                this.MinHeight = this.Height;
+                this.MinWidth  = this.Width;
+            };
+
             dateWeightManager = ClassMappings.DateWeightManager.Create( xmlFilepath );
             if( dateWeightManager == null )
             {

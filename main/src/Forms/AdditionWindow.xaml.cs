@@ -29,6 +29,11 @@ namespace SimpleWeightManager
                 this.label7.Visibility = Visibility.Hidden;
             }
 
+            this.Loaded += (s, e) => {
+                this.MinHeight = this.Height;
+                this.MinWidth  = this.Width;
+            };
+
             this.viewModel = viewModel;
 
             this.DataContext = this.viewModel;
