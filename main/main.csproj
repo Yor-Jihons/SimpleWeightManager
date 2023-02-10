@@ -33,9 +33,4 @@
     <PackageReference Include="system.drawing.common" Version="6.0.0" />
   </ItemGroup>
 
-  <!-- Show message -->
-  <Target Name="PrintCompile" BeforeTargets="Build">
-    <Message Text="----- Compile $(AssemblyName) as WPF, $(Configuration) -----" Importance="high" />
-  </Target>
-
 </Project>

@@ -1,11 +1,11 @@
-# SimpleWeightManager 1.0.0
+# SimpleWeightManager
 
 The product to visualize own weight transition, in order to keep motivation for weight-managing.
 
 ## 1. Requirements
 
 - dotnet 6.0.202
-- Windows OS
+- Windows OS (later 7)
 - [NLog - NuGet Gallery](https://www.nuget.org/packages/NLog/)
 - [Microsoft.Win32.SystemEvents 6.0.1](https://www.nuget.org/packages/Microsoft.Win32.SystemEvents)
 - [ScottPlot 4.1.45](https://www.nuget.org/packages/ScottPlot/4.1.45)
