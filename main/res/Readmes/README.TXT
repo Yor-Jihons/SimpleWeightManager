@@ -15,6 +15,10 @@
                @ 体脂肪率の推移データの可視化
                @ 体重データ等の一括削除
 
+      使い方 :
+              [オンラインヘルプ](https://yor-jihons.github.io/helppages/ja/simpleweightmanager.html)を参照してください。
+              URL: https://yor-jihons.github.io/helppages/ja/simpleweightmanager.html
+
 インストール :
                このzipファイルを解凍すれば完了
 
