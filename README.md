@@ -49,7 +49,7 @@ Step 4. Input your data.
 
 Step 5. Click the button "登録".
 
-See also [the online help](https://yor-jroom.com/help/ja/simpleweightmanager.html) ( or [for Japanese](https://yor-jroom.com/help/ja/simpleweightmanager.html) ).
+See also [the online help](https://yor-jroom.com/help/ja/simpleweightmanager.html).
 
 ## 4. Licenses
 
