@@ -49,6 +49,8 @@ Step 4. Input your data.
 
 Step 5. Click the button "登録".
 
+See also [the online help](https://yor-jroom.com/help/ja/simpleweightmanager.html) ( or [for Japanese](https://yor-jroom.com/help/ja/simpleweightmanager.html) ).
+
 ## 4. Licenses
 
 This product is released under the MIT License.
@@ -73,9 +75,7 @@ The Icon file are downloaded from [icon-icons.com](https://icon-icons.com/ja/%E3
 - Language: C#
 - Framework: WPF
 
-## 6. Changes
-
-## 7. Contact
+## 6. Contact
 
 Author: Yor-Jihons  
 GitHub: [SimpleWeightManager](https://github.com/Yor-Jihons/SimpleWeightManager)  
