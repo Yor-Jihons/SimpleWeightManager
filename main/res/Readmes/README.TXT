@@ -19,8 +19,8 @@
                このzipファイルを解凍すれば完了
 
       使い方 :
-              [オンラインヘルプ](https://yor-jihons.github.io/helppages/ja/simpleweightmanager.html)を参照してください。
-              URL: https://yor-jihons.github.io/helppages/ja/simpleweightmanager.html
+              [オンラインヘルプ](https://yor-jroom.com/help/ja/simpleweightmanager.html)を参照してください。
+              URL: https://yor-jroom.com/help/ja/simpleweightmanager.html
 
     動作環境 :
                @ Windows 7以降
