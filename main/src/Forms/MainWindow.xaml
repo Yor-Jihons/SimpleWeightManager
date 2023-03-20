@@ -29,6 +29,7 @@
                     </MenuItem>
                     <MenuItem Name="bodyFatPercentageCheckableMenuItem" Header="体脂肪率をグラフに表示する(_B)"
                         Click="BodyFatPercentageCheckableMenuItem_Click" IsCheckable="true" />
+                    <MenuItem Name="helpMenuItem" Header="ヘルプ(_H)" Click="HelpMenuItem_Click" />
                 </Menu>
             </StackPanel>
 
