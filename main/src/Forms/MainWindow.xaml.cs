@@ -184,7 +184,7 @@ namespace SimpleWeightManager
         /// <param name="e"></param>
         private void HelpMenuItem_Click( object sender, System.Windows.RoutedEventArgs e )
         {
-            var startInfo = new System.Diagnostics.ProcessStartInfo( "https://yor-jroom.com/help/ja/simpleweightmanager.html" );
+            var startInfo = new System.Diagnostics.ProcessStartInfo( "https://yorroom2.cloudfree.jp/help/ja/simpleweightmanager.html" );
             startInfo.UseShellExecute = true;
             System.Diagnostics.Process.Start(startInfo);
         }
