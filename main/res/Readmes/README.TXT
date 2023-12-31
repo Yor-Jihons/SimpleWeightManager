@@ -2,7 +2,7 @@ SimpleWeightManager
 ----------------------------
 
 バージョン:
-  SimpleWeightManager 1.0.2
+  SimpleWeightManager 1.0.3
 
 著作者:
   Yor-Jihons
