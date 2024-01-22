@@ -2,7 +2,7 @@ SimpleWeightManager
 ----------------------------
 
 バージョン:
-  SimpleWeightManager 1.0.3
+  SimpleWeightManager 1.0.4
 
 著作者:
   Yor-Jihons
@@ -29,7 +29,6 @@ SimpleWeightManager
   * [ScottPlot 4.1.45](https://www.nuget.org/packages/ScottPlot/4.1.45)
   * [ScottPlot.Wpf 4.1.45](https://www.nuget.org/packages/ScottPlot.WPF/5.0.0-beta)
   * [System.Drawing.Common 6.0.0](https://www.nuget.org/packages/System.Drawing.Common)
-  * ICON: CC Atribution from [icon-icons.com](https://icon-icons.com/ja/%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3/%E3%82%A2%E3%83%97%E3%83%AA/129133)
 
 オンラインヘルプ:
     [Online Help](https://yorroom2.cloudfree.jp/help/ja/simpleweightmanager.html)
